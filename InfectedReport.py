@@ -54,8 +54,6 @@ def  SaveAsExcelReport(filename,datalist,datetime,checktime):
           setExcelFormat(datetime+'_Global_Infected_Num'+'.xlsx')
           rows = GotExcelRows(datetime+'_Global_Infected_Num'+'.xlsx')
           DrewChart(datetime+'_Global_Infected_Num'+'.xlsx',rows)
-         
-          #print(dt)
           return True
       else:    
           return False
