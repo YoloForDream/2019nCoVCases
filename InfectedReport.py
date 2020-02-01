@@ -162,7 +162,7 @@ if __name__ == '__main__':
         print('Fail to Create Report Successfully!')
      os.remove(newfilename)
      os.remove(currentdate+'_infected')
-     #insert_db(data,checktime)
+     #insert_db(data,checktime)# if you want to store data in mongodb
 
     
 
