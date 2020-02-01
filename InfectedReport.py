@@ -12,8 +12,7 @@ from openpyxl.styles import PatternFill,Border, Side, Alignment, Font
 from openpyxl.styles.colors import RED,YELLOW, BLUE, BLACK,WHITE
 import urllib.request
 import time
-import pymongo
-#from Dbhelper import dbhelper
+#import pymongo #if you want to store data in mongodb
 
 root = os.getcwd()
 
@@ -135,9 +134,9 @@ def timeconvert(timeNum):
     
 def delfile(filename):
     os.remove(filename)
-    
-
-def insert_db(datalist,time):
+   
+'''
+def insert_db(datalist,time):#if you want to store data in mongodb
     client = pymongo.MongoClient(host='localhost', port=27017)
     db = client['2019nCoVDB']
     collection = db['GlobalDailyReport']
@@ -146,7 +145,7 @@ def insert_db(datalist,time):
          datalist[i]['Last_Update']=time
          collection.insert_one(datalist[i])
     print('Insert To Mongodb Successfully!')
-    
+''' 
 if __name__ == '__main__':
      aurl = "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Confirmed%20desc%2CCountry_Region%20asc%2CProvince_State%20asc&outSR=102100&resultOffset=0&resultRecordCount=250&cacheHint=true"
      html = getHtml(aurl)
