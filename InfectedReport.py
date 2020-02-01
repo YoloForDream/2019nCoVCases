@@ -57,6 +57,7 @@ def  SaveAsExcelReport(filename,datalist,datetime,checktime):
           return True
       else:    
           return False
+       
 def  getdata(filename):
      infectedlocations = []   
      with open(filename, 'r') as f:
